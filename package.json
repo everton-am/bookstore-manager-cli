@@ -4,9 +4,10 @@
   "description": "Sistema CLI de Gerenciamento de Livraria",
   "main": "src/main.ts",
   "type": "module",
-  "scripts": {
+ "scripts": {
     "dev": "tsx src/main.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node dist/main.js"
   },
   "keywords": [],
   "author": "",
