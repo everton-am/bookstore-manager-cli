@@ -66,7 +66,9 @@ async function menu() {
         await emprestimoController.listar();
         break;
       case 0:
-        console.log('Saindo do sistema...');
+        console.log('\n======================================');
+        console.log('   Obrigado por utilizar o BookStore!  ');
+        console.log('======================================\n');
         process.exit(0);
       default:
         console.log('Opção inválida!');
