@@ -49,4 +49,15 @@ export class LivroRepository {
     const result = await pool.query('DELETE FROM livros WHERE id = $1', [id]);
     return (result.rowCount ?? 0) > 0;
   }
+
+  async listarLivrosComAutores(): Promise<any[]> {
+  const query = `
+    SELECT l.id, l.titulo, l.ano_publicacao, a.nome as autor_name 
+    FROM livros l
+    JOIN autores a ON l.autor_id = a.id
+  `;
+  const result = await pool.query(query);
+  return result.rows;
 }
+}
+
