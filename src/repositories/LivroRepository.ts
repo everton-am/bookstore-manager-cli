@@ -51,13 +51,13 @@ export class LivroRepository {
   }
 
   async listarLivrosComAutores(): Promise<any[]> {
-  const query = `
-    SELECT l.id, l.titulo, l.ano_publicacao, a.nome as autor_name 
-    FROM livros l
-    JOIN autores a ON l.autor_id = a.id
-  `;
-  const result = await pool.query(query);
-  return result.rows;
-}
+    const query = `
+      SELECT l.id, l.titulo, l.quantidade_total, l.quantidade_disponivel, a.nome as autor_nome 
+      FROM livros l
+      JOIN autores a ON l.id_autor = a.id
+    `;
+    const result = await pool.query(query);
+    return result.rows;
+  }
 }
 
